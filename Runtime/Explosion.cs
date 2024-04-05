@@ -23,6 +23,9 @@ namespace CameraShake
         [SerializeField]
         float range = 45;
 
+        [SerializeField]
+        bool autoDelete;
+
         private IEnumerator Start()
         {
             yield return new WaitForSeconds(delay);
@@ -41,6 +44,11 @@ namespace CameraShake
             float stress = (1 - Mathf.Pow(distance01, 2)) * maximumStress;
 
             target.InduceStress(stress);
+            yield return new WaitForSeconds(1f);
+            if (autoDelete)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

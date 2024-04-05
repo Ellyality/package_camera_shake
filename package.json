@@ -1,7 +1,7 @@
 {
 	"name": "com.ellyality.camera.shake",
 	"displayName":"Camera Shake",
-	"version": "1.0.0",
+	"version": "1.0.1",
     "author": "Elly Effect",
     "unity": "2019.2",
     "keywords": ["camera", "shake", "effect"],

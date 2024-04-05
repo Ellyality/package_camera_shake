@@ -45,16 +45,23 @@ namespace CameraShake
         /// Value between 0 and 1 defining the current amount
         /// of stress this transform is enduring.
         /// </summary>
-        private float trauma;
+        float trauma;
 
-        private float seed;
+        float seed;
 
         private void Awake()
         {
-            seed = Random.value;
+            GenerateNewSeed();
         }
 
         private void Update()
+        {
+            ShakeFuction();
+        }
+
+        public void GenerateNewSeed() => seed = Random.value;
+
+        public virtual void ShakeFuction()
         {
             // Taking trauma to an exponent allows the ability to smoothen
             // out the transition from shaking to being static.
